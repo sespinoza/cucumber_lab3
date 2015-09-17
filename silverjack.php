@@ -1,6 +1,8 @@
 <?php
 
+//The array of file paths to cards in the entire deck
 $deck = array();
+
 //The array of player fo this game
 $players = array('Rihcard Ciampa', 'Andrew Richardson', 'Susan Espnoza', 'Brandon Saletta' );
 
@@ -11,22 +13,19 @@ $cardDirs = array("./img/cards/clubs/*",
                   "./img/cards/spades/*");
 
 
-
 //Collect the files in the $deck array
 for ($i=0; $i < 4 ; $i++) { 
-	
 	// Add the cards from each directory to the array
 	foreach (glob($cardDirs[$i]) as $file) {
 		array_push($deck, $file);
 	}
-	
 }
 
-echo "<br/><br/>";
 
 //Now lets shuffle the $deck array
 shuffle($deck);
 
+//Testing the contents
 print_r($deck);
 
 /*
@@ -58,4 +57,5 @@ function pullCard(){
   }
 }
 */
+
 ?>

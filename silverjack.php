@@ -25,8 +25,36 @@ for ($i=0; $i < 4 ; $i++) {
 //Now lets shuffle the $deck array
 shuffle($deck);
 
-//Testing the contents
-print_r($deck);
+
+//Deal the cards for each user
+function deal(){
+
+	global $deck;
+	//Get the card file path information to store if it is usable
+	$cardDealt = $deck[count($deck) -1];
+	
+	/*
+	 * Get the value of the card to both compare and add to the
+	 * total if it is not a duplicate value.
+	 * 
+	 * The game rules state that each player can not recieve duplicate
+	 * card values
+	 */
+	$cardValue = substr(substr($deck[count($deck) - 1], (strrpos($deck[count($deck) - 1], "/") + 1)), 0, -4);
+	
+	echo "<br/> Card Value: ";
+	echo $cardValue;
+	echo "<br/> Card file path: ";
+	echo $cardDealt;
+}
+
+//Lets deal a round fo cards
+deal();
+
+
+
+
+
 
 /*
 for($i = 1; $i < 54; $i++){

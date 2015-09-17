@@ -1,4 +1,5 @@
 <?php
+
 $deck = array();
 
 for($i = 1; $i < 54; $i++){
@@ -6,23 +7,27 @@ for($i = 1; $i < 54; $i++){
 }
 
 shuffle($deck);
-$card = array_pop($deck);
 
-switch ($card) {
-  case $card > 39:
-    echo "Club";
-    break;
+function pullCard(){
+  $card = array_pop($deck);
 
-  case $card > 26:
-    echo "Spade";
-    break;
+  switch ($card) {
+    case $card > 39:
+      echo "Club";
+      break;
 
-  case $card > 13:
-    echo "Heart";
-    break;
+    case $card > 26:
+      echo "Spade";
+      break;
 
-  default:
-    echo "Diamond";
-    break;
+    case $card > 13:
+      echo "Heart";
+      break;
+
+    default:
+      echo "Diamond";
+      break;
+  }
 }
+
 ?>

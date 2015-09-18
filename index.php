@@ -3,20 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>SilverJack Game</title>
-
-		<meta name="description" content="Silver Jack card game for CST336">
-
+		<title>Silver Jack Card Game</title>
+		
+		<!-- SEO Meta tag information -->
+		<meta name="description" content="Silver Jack card game for the CST336 course at CSU Monterey Bay FA2015.
+		The Silver Jack game is part of a lab for teaching students how to use PHP and arrays, loops with conditions"/>
+		
+		<meta name="keywords" content="PHP tutorial game, CSU Monterey Bay CST336, PHP Lab application, Silver Jack Game" />
+				
 		<!-- Web application authors -->
-		<meta name="author" content="Andrew Richardson" />
-		<meta name="author" content="Susan Espinoza" />
-		<meta name="author" content="Richard Ciampa"/>
-		<meta name="author" content="Brandon Saletta" />
+		<meta name="author" content="Andrew Richardson, Susan Espinoza, Brandon Saletta & Richard D Ciampa" />
+
 
 		<!-- Style sheets -->
 		<link href="css/styles.css" rel="stylesheet">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
 
 		<!-- Site favicon and application icon references -->
 		<!-- <link rel="shortcut icon" href="/favicon.ico"> Unused at the moment -->

@@ -1,6 +1,18 @@
 body{
     background-color: green;
 }
-header{
+
+#wrapper{
+	width: 900px;
+	margin:0 auto;
+}
+
+header h1{
     text-align:center;
+}
+
+footer p{
+	width: 600px;
+	margin: 0 auto;
+	font-size: .7em;
 }

@@ -52,19 +52,21 @@ function deal() {
 			array_pop($deck);
 			//Add the sum to the total
 			$handTotal += $cardValue;
+
+			//Testing only REMOVE for production release
+			echo "<br/> Card Value: ";
+			echo $cardValue;
+			echo "<br/> Card file path: ";
+			echo $cardDealt;
+			echo "<br/> Hand Total: ";
+			echo $handTotal;
+			echo "<hr/>";
 		} else {
 			shuffle($deck);
 		}
 
-		echo "<br/> Card Value: ";
-		echo $cardValue;
-		echo "<br/> Card file path: ";
-		echo $cardDealt;
-		echo "<br/> Hand Total: ";
-		echo $handTotal;
+	} while($handTotal < 45 && (count($handValuesDealt) < 8));
 
-	} while($handTotal < 45);
-	
 	echo "<br/>";
 	print_r($handValuesDealt);
 
@@ -76,7 +78,6 @@ function isValueDealt($handValuesDealt, $cardValue) {
 			return TRUE;
 		}
 	}
-
 	return FALSE;
 }
 

@@ -40,7 +40,7 @@
 
 			<footer>
 				<p>
-					&copy; Copyright by Andrew Richardson, Brandon Saletta, Richard Ciampa, Susan Espinoza
+					All rights reserved &copy; Copyright by Andrew Richardson, Brandon Saletta, Richard Ciampa, Susan Espinoza
 				</p>
 			</footer>
 		</div>

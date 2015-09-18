@@ -11,6 +11,19 @@ header h1{
     text-align:center;
 }
 
+/* ---------- CSS animation for each card ----------- */
+img.cards{
+	
+	animation: cardDealt;
+	animation-delay: 2s,
+}
+
+@keyframes cardDealt{
+	
+}
+
+/* ------------- end card animation ---------------- */
+
 footer p{
 	width: 600px;
 	margin: 0 auto;

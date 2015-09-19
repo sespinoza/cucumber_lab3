@@ -4,7 +4,28 @@
 $deck = array();
 
 //The array of player fo this game
-$players = array('Rihcard Ciampa', 'Andrew Richardson', 'Susan Espnoza', 'Brandon Saletta');
+$players = array(
+                  'Rihcard Ciampa'=>array(
+				                   'cards'=>array(),
+								   'handTotal'=>'',
+								   'pic'=>'',
+								   'win'=>'false'),
+                  'Andrew Richardson'=>array(
+				  				   'cards'=>array(),
+								   'handTotal'=>'',
+								   'pic'=>'',
+								   'win'=>'false'),
+                  'Susan Espnoza'=>array(
+				  				   'cards'=>array(),
+								   'handTotal'=>'',
+								   'pic'=>'',
+								   'win'=>'false'),
+                  'Brandon Saletta'=>array(
+				  				   'cards'=>array(),
+								   'handTotal'=>'',
+								   'pic'=>'',
+								   'win'=>'false')
+				  );
 
 //Get a reference to all the cards in the different directories
 $cardDirs = array("./img/cards/clubs/*", "./img/cards/diamonds/*", "./img/cards/hearts/*", "./img/cards/spades/*");

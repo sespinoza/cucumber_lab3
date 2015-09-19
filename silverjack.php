@@ -6,24 +6,24 @@ $deck = array();
 //The array of player fo this game
 $players = array(
                   'Rihcard Ciampa'=>array(
-				                   'cards'=>array(),
+                                   'cards'=>array(1,2,3,4,5,6,7,8),
 								   'handTotal'=>'',
-								   'pic'=>'',
+								   'pic'=>'./img/pl3.jpg',
 								   'win'=>'false'),
                   'Andrew Richardson'=>array(
 				  				   'cards'=>array(),
 								   'handTotal'=>'',
-								   'pic'=>'',
+								   'pic'=>'./img/pl1.jpg',
 								   'win'=>'false'),
                   'Susan Espnoza'=>array(
 				  				   'cards'=>array(),
 								   'handTotal'=>'',
-								   'pic'=>'',
+								   'pic'=>'./pl4.jpg',
 								   'win'=>'false'),
                   'Brandon Saletta'=>array(
 				  				   'cards'=>array(),
 								   'handTotal'=>'',
-								   'pic'=>'',
+								   'pic'=>'./img/pl2.jpg',
 								   'win'=>'false')
 				  );
 
@@ -75,6 +75,7 @@ function deal() {
 			$handTotal += $cardValue;
 
 			//Testing only REMOVE for production release
+			/*
 			echo "<br/> Card Value: ";
 			echo $cardValue;
 			echo "<br/> Card file path: ";
@@ -82,6 +83,7 @@ function deal() {
 			echo "<br/> Hand Total: ";
 			echo $handTotal;
 			echo "<hr/>";
+			 */
 		} else {
 			shuffle($deck);
 		}
@@ -89,7 +91,7 @@ function deal() {
 	} while($handTotal < 45 && (count($handValuesDealt) < 8));
 
 	echo "<br/>";
-	print_r($handValuesDealt);
+	//print_r($handValuesDealt);
 
 }
 

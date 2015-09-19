@@ -15,7 +15,7 @@
 		<meta name="author" content="Andrew Richardson, Susan Espinoza, Brandon Saletta & Richard D Ciampa" />
 
 		<!-- Style sheets -->
-		<link href="css/styles.css" rel="stylesheet">
+		<link type="text/css" href="css/styles.css" rel="stylesheet">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -26,7 +26,7 @@
 	</head>
 
 	<body>
-		<div idid="wrapper">
+		<div id="wrapper">
 			<header>
 				<h1>Welcome to SilverJack</h1>
 			</header>
@@ -38,12 +38,13 @@
 				include_once './silverjack.php';
 				global $players;
 
-				print_r($players);
 
 				foreach ($players as $playersKey => $playerValues) {
-					
-					foreach ($playerValues as $value) {
-						echo $value;
+					echo "<h4>{$playersKey}</h4>";
+					$pic = $players[$playersKey]['pic'];
+					echo "<img class='player-pic' src='{$pic}' />";
+					foreach ($playerValues as $key => $value) {
+						
 					}
 				}
 				?>

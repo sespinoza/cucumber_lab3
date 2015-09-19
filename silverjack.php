@@ -5,10 +5,10 @@ $deck = array();
 
 //The array of player fo this game
 $players = array(
-                  'Rihcard Ciampa'=>array(
+                  'Richard Ciampa'=>array(
                                    'cards'=>array(1,2,3,4,5,6,7,8),
 								   'handTotal'=>'',
-								   'pic'=>'./img/pl3.jpg',
+								   'pic'=>'./img/pl3.png',
 								   'win'=>'false'),
                   'Andrew Richardson'=>array(
 				  				   'cards'=>array(),
@@ -18,7 +18,7 @@ $players = array(
                   'Susan Espnoza'=>array(
 				  				   'cards'=>array(),
 								   'handTotal'=>'',
-								   'pic'=>'./pl4.jpg',
+								   'pic'=>'./img/pl4.jpg',
 								   'win'=>'false'),
                   'Brandon Saletta'=>array(
 				  				   'cards'=>array(),

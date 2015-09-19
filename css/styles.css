@@ -11,6 +11,10 @@ header h1{
     text-align:center;
 }
 
+img.player-pic{
+	width: 100px;
+}
+
 /* ---------- CSS animation for each card ----------- */
 img.cards{
 	

@@ -16,6 +16,7 @@
 
 		<!-- Style sheets -->
 		<link type="text/css" href="css/styles.css" rel="stylesheet">
+		<link type="text/css" href="./css/theme-common.css" rel="stylesheet" />
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -37,20 +38,32 @@
 				//Include the silverjack.php so we can see our code
 				include_once './silverjack.php';
 				global $players;
-
+				
 
 				foreach ($players as $playersKey => $playerValues) {
+					echo "<div id='player-container'>";
 					echo "<h4>{$playersKey}</h4>";
+					
+					/*
+					 * Lets get the image uri here to make the formatting
+					 * of the image tag simpler
+					 */
 					$pic = $players[$playersKey]['pic'];
 					echo "<img class='player-pic' src='{$pic}' />";
+					
 					foreach ($playerValues as $key => $value) {
 						
 					}
+					
+					echo "<!-- End Player -->\n </div>";
 				}
 				?>
 			</div>
 
 			<footer>
+				<figure>
+					<img class="footerLogoImage" src="./img/csumb-logo-white.png" />
+				</figure>
 				<p>
 					All rights reserved &copy; Copyright by Andrew Richardson, Brandon Saletta, Richard Ciampa, Susan Espinoza
 				</p>

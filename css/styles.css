@@ -1,5 +1,6 @@
 body{
-    background-color: green;
+    background:url(../img/casino-carpet.jpg);
+    background-repeat: repeat;
 }
 
 #wrapper{
@@ -7,12 +8,28 @@ body{
 	margin:0 auto;
 }
 
+header{
+	background-color: rgba(0,0,0, .85);
+	border-radius: 10px;
+}
+
 header h1{
     text-align:center;
+    color:green;
+    font-size: 3em;
+}
+
+#player-container{
+	border: 1px gold solid;
+	background-color: rgba(0,128, 0, .75);
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 10px;
 }
 
 img.player-pic{
 	width: 100px;
+	border-radius: 10px;
 }
 
 /* ---------- CSS animation for each card ----------- */

@@ -4,28 +4,7 @@
 $deck = array();
 
 //The array of player fo this game
-$players = array(
-                  'Richard Ciampa'=>array(
-                                   'cards'=>array(1,2,3,4,5,6,7,8),
-								   'handTotal'=>'',
-								   'pic'=>'./img/pl3.png',
-								   'win'=>'false'),
-                  'Andrew Richardson'=>array(
-				  				   'cards'=>array(),
-								   'handTotal'=>'',
-								   'pic'=>'./img/pl1.jpg',
-								   'win'=>'false'),
-                  'Susan Espnoza'=>array(
-				  				   'cards'=>array(),
-								   'handTotal'=>'',
-								   'pic'=>'./img/pl4.jpg',
-								   'win'=>'false'),
-                  'Brandon Saletta'=>array(
-				  				   'cards'=>array(),
-								   'handTotal'=>'',
-								   'pic'=>'./img/pl2.jpg',
-								   'win'=>'false')
-				  );
+$players = array('Richard Ciampa' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl3.png', 'win' => 'false'), 'Andrew Richardson' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl1.jpg', 'win' => 'false'), 'Susan Espnoza' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl4.jpg', 'win' => 'false'), 'Brandon Saletta' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl2.jpg', 'win' => 'false'));
 
 //Get a reference to all the cards in the different directories
 $cardDirs = array("./img/cards/clubs/*", "./img/cards/diamonds/*", "./img/cards/hearts/*", "./img/cards/spades/*");
@@ -42,57 +21,54 @@ for ($i = 0; $i < 4; $i++) {
 shuffle($deck);
 
 //Deal the cards for each user
-function deal() {
+function deal($players) {
 
-	global $deck;
 	//Call the global var for the deck array
-	$handTotal = 0;
-	//The hand card sum. The closest to 45 with going over wins
-	$handValuesDealt = array();
+	global $deck;
 
-	//We use a do loop becuase we need to do it once for sure
-	do {
+	foreach ($players as $player => $playerValues) {
+		$handTotal = 0;
+		//The hand card sum. The closest to 45 with going over wins
+		$handValuesDealt = array();
 
-		//Get the card file path information to store if it is usable
-		$cardDealt = $deck[count($deck) - 1];
+		//echo $player . "<br/>" . print_r($playerValues);
 
-		/*
-		 * Get the value of the card to both compare and add to the
-		 * total if it is not a duplicate value.
-		 *
-		 * The game rules state that each player can not recieve duplicate
-		 * card values
-		 */
-		$cardValue = substr(substr($deck[count($deck) - 1], (strrpos($deck[count($deck) - 1], "/") + 1)), 0, -4);
+		//We use a do loop becuase we need to do it once for sure
+		do {
 
-		//Check that the card value has not already been dealt from the deck
-		if (!isValueDealt($handValuesDealt, $cardValue)) {
-			//Add the card to the hand
-			array_push($handValuesDealt, $cardValue);
-			//Remove the card from the deck
-			array_pop($deck);
-			//Add the sum to the total
-			$handTotal += $cardValue;
+			//Get the card file path information to store if it is usable
+			$cardDealt = $deck[count($deck) - 1];
 
-			//Testing only REMOVE for production release
 			/*
-			echo "<br/> Card Value: ";
-			echo $cardValue;
-			echo "<br/> Card file path: ";
-			echo $cardDealt;
-			echo "<br/> Hand Total: ";
-			echo $handTotal;
-			echo "<hr/>";
+			 * Get the value of the card to both compare and add to the
+			 * total if it is not a duplicate value.
+			 *
+			 * The game rules state that each player can not recieve duplicate
+			 * card values
 			 */
-		} else {
-			shuffle($deck);
-		}
+			$cardValue = substr(substr($deck[count($deck) - 1], (strrpos($deck[count($deck) - 1], "/") + 1)), 0, -4);
 
-	} while($handTotal < 45 && (count($handValuesDealt) < 8));
+			//Check that the card value has not already been dealt from the deck
+			if (!isValueDealt($handValuesDealt, $cardValue)) {
+				//Add the card to the hand
+				array_push($handValuesDealt, $cardValue);
+				//Remove the card from the deck
+				array_pop($deck);
 
-	echo "<br/>";
-	//print_r($handValuesDealt);
+				//Add the sum to the total
+				$handTotal += $cardValue;
+				$playerValues['handTotal'] += $cardValue;
+				//Add the card url to the array
+				array_push($playerValues['cards'], $cardDealt);
 
+			} else {
+				shuffle($deck);
+			}
+
+		} while($handTotal < 45 && (count($handValuesDealt) < 8));
+		$players[$player] = $playerValues;
+	}
+	return $players;
 }
 
 function isValueDealt($handValuesDealt, $cardValue) {
@@ -105,35 +81,6 @@ function isValueDealt($handValuesDealt, $cardValue) {
 }
 
 //Lets deal a round fo cards
-deal();
+$players = deal($players);
 
-/*
- for($i = 1; $i < 54; $i++){
- array_push($deck, $i);
- }
-
- shuffle($deck);
-
- function pullCard(){
- $card = array_pop($deck);
-
- switch ($card) {
- case $card > 39:
- echo "Club";
- break;
-
- case $card > 26:
- echo "Spade";
- break;
-
- case $card > 13:
- echo "Heart";
- break;
-
- default:
- echo "Diamond";
- break;
- }
- }
- */
 ?>

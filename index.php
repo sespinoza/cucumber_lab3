@@ -37,27 +37,28 @@
 				<?php
 				//Include the silverjack.php so we can see our code
 				include_once './silverjack.php';
+								
 				global $players;
-				
 
 				foreach ($players as $playersKey => $playerValues) {
 					echo "<div id='player-container'>";
 					echo "<h4>{$playersKey}</h4>";
-					
+
 					/*
 					 * Lets get the image uri here to make the formatting
 					 * of the image tag simpler
 					 */
 					$pic = $players[$playersKey]['pic'];
 					echo "<img class='player-pic' src='{$pic}' />";
-					
-					foreach ($playerValues as $key => $value) {
-						
+
+					foreach ($playerValues['cards'] as $card) {
+						echo "<img class='cards' src='{$card}'/>";
 					}
-					
+
 					echo "<!-- End Player -->\n </div>";
 				}
 				?>
+
 			</div>
 
 			<footer>

@@ -4,7 +4,10 @@
 $deck = array();
 
 //The array of player fo this game
-$players = array('Richard Ciampa' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl3.png', 'win' => 'false'), 'Andrew Richardson' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl1.jpg', 'win' => 'false'), 'Susan Espnoza' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl4.jpg', 'win' => 'false'), 'Brandon Saletta' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl2.jpg', 'win' => 'false'));
+$players = array('Richard Ciampa' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl3.png', 'win' => 'false'),
+                 'Andrew Richardson' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl1.jpg', 'win' => 'false'),
+                 'Susan Espnoza' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl4.jpg', 'win' => 'false'),
+                 'Brandon Saletta' => array('cards' => array(), 'handTotal' => '', 'pic' => './img/pl2.jpg', 'win' => 'false'));
 
 //Get a reference to all the cards in the different directories
 $cardDirs = array("./img/cards/clubs/*", "./img/cards/diamonds/*", "./img/cards/hearts/*", "./img/cards/spades/*");
@@ -30,8 +33,6 @@ function deal($players) {
 		$handTotal = 0;
 		//The hand card sum. The closest to 45 with going over wins
 		$handValuesDealt = array();
-
-		//echo $player . "<br/>" . print_r($playerValues);
 
 		//We use a do loop becuase we need to do it once for sure
 		do {
@@ -61,16 +62,18 @@ function deal($players) {
 				//Add the card url to the array
 				array_push($playerValues['cards'], $cardDealt);
 
-			} else {
+			} else {//We will reshuffle the deck so we get no duplicates
 				shuffle($deck);
 			}
-
 		} while($handTotal < 45 && (count($handValuesDealt) < 8));
+		//Set the player information for the return
 		$players[$player] = $playerValues;
 	}
+    //return the $players array to the calling code
 	return $players;
 }
 
+//We need to see if the value of the card has been dealt
 function isValueDealt($handValuesDealt, $cardValue) {
 	foreach ($handValuesDealt as $value) {
 		if ($cardValue == $value) {
@@ -80,7 +83,7 @@ function isValueDealt($handValuesDealt, $cardValue) {
 	return FALSE;
 }
 
-//Lets deal a round fo cards
+//Lets deal a round of cards
 $players = deal($players);
 
 ?>

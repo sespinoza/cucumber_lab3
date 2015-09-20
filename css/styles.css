@@ -29,6 +29,14 @@ header h1{
 
 #player-container h4{
 	color: white;
+	display: inline;
+	padding-bottom: 5px;
+}
+
+#player-container span{
+	display: inline;
+	color: white;
+	float:right;
 }
 
 img.player-pic{
@@ -36,8 +44,8 @@ img.player-pic{
 	border-radius: 10px;
 	margin-left: 10px;
 	margin-right: 40px;
+	margin-top: 10px;
 }
-
 
 
 /* ---------- CSS animation for each card ----------- */

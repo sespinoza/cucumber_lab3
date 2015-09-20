@@ -41,21 +41,24 @@
 				global $players;
 
 				foreach ($players as $playersKey => $playerValues) {
-					echo "<div id='player-container'>";
-					echo "<h4>{$playersKey}</h4>";
+					echo "<div id='player-container'> \n";
+					echo "<h4>{$playersKey}</h4>\n";
+					echo "<span>Hand Total: {$players[$playersKey]['handTotal']} </span>\n <br/> \n";
 
 					/*
 					 * Lets get the image uri here to make the formatting
 					 * of the image tag simpler
 					 */
 					$pic = $players[$playersKey]['pic'];
-					echo "<img class='player-pic' src='{$pic}' />";
-
+					echo "<img class='player-pic' src='{$pic}' />\n";
+					
+					//The player card images
+					echo "<!-- Player card images -->";
 					foreach ($playerValues['cards'] as $card) {
-						echo "<img class='cards' src='{$card}'/>";
+						echo "\n<img class='cards' src='{$card}'/>";
 					}
-
-					echo "<!-- End Player -->\n </div>";
+					//End the player container <div>
+					echo "\n <!-- End Player -->\n </div> \n\n";
 				}
 				?>
 

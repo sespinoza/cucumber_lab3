@@ -65,7 +65,7 @@ function deal($players) {
 			} else {//We will reshuffle the deck so we get no duplicates
 				shuffle($deck);
 			}
-		} while($handTotal < 45 && (count($handValuesDealt) < 8));
+		} while($handTotal < 42 && (count($handValuesDealt) < 6));
 		//Set the player information for the return
 		$players[$player] = $playerValues;
 	}

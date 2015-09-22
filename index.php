@@ -57,9 +57,17 @@
 					foreach ($playerValues['cards'] as $card) {
 						echo "\n<img class='cards' src='{$card}'/>";
 					}
+					//Add the winner animation
+					if($playerValues["win"] == "TRUE"){
+						echo "\n <!-- Winner Animation -->\n<span id='winner'>Winner!</span>";
+					}
 					//End the player container <div>
 					echo "\n <!-- End Player -->\n </div> \n\n";
 				}
+				
+				echo "\t\t<div id='btnContainer'>\n
+					<a id='btnDeal' href='./' title='deal new hand' target='_self'>Deal Hand</a>\n
+				</div>\n";
 				?>
 
 			</div>

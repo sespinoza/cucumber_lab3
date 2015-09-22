@@ -44,7 +44,14 @@
 					echo "<div id='player-container'> \n";
 					echo "<h4>{$playersKey}</h4>\n";
 					echo "<span>Hand Total: {$players[$playersKey]['handTotal']} </span>\n <br/> \n";
-
+					
+					if($players[$playersKey]['handTotal'] > 42){
+						echo "<strong> Lose </strong>";
+						
+					}elseif($players[$playersKey]['handTotal'] == 42 || $players[$playersKey]['handTotal'] < 42){
+						echo "<h2> Winner!</h2>";
+					}
+					
 					/*
 					 * Lets get the image uri here to make the formatting
 					 * of the image tag simpler
@@ -63,8 +70,11 @@
 				?>
 
 			</div>
+			
+			<form><input class="button" type=button value="New Deal" onClick="history.go()"></form> 
 
-			<footer>
+		</div>
+		<footer>
 				<figure>
 					<img class="footerLogoImage" src="./img/csumb-logo-white.png" />
 				</figure>
@@ -72,6 +82,5 @@
 					All rights reserved &copy; Copyright by Andrew Richardson, Brandon Saletta, Richard Ciampa, Susan Espinoza
 				</p>
 			</footer>
-		</div>
 	</body>
 </html>

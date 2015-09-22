@@ -69,7 +69,9 @@ function deal($players) {
 		//Set the player information for the return
 		$players[$player] = $playerValues;
 	}
-    //return the $players array to the calling code
+        //Call findWinners() to set the Win boolean
+	$players = findWinners($players);
+        //return the $players array to the calling code
 	return $players;
 }
 
@@ -82,6 +84,29 @@ function isValueDealt($handValuesDealt, $cardValue) {
 	}
 	return FALSE;
 }
+
+/*
+ * Find all the winners in this round of Silverjack and set the
+ * boolean value to true for the UI. There can be more than one
+ * winner 
+ */
+function findWinners($players){
+	//Hold the highest winning hand here
+	$highestHand = 0;
+	//Find the hightest hand at the table
+	foreach ($players as $hand) {
+		if(($highestHand < $hand["handTotal"]) && ($hand["handTotal"] <= 42)){
+			$highestHand = $hand["handTotal"];
+		}
+	}
+	//Set the boolean value of each winner to true
+	foreach ($players as $player => $hand) {
+		$players[$player]["win"] = ($hand["handTotal"] == $highestHand) ? "TRUE" : "FALSE";
+	}
+	//Return the array for players with the Win boolean set
+	return $players;
+}
+
 
 //Lets deal a round of cards
 $players = deal($players);

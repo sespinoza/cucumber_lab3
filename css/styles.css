@@ -51,6 +51,29 @@ h2{
 	float:right;
 }
 
+#winner{
+	animation: winner 3s infinite;
+	transition-timing-function: ease-in-out;
+	animation-direction: alternate;
+	animation-delay:.85s;
+	opacity: 0;
+	border-radius: 20px;
+	padding: 5px;
+	margin: 35px 20px 0 0;
+	font-size: 1.7em;
+}
+
+@keyframes winner{
+	0%  {box-shadow: 10px 10px 25px gold;
+	     opacity: .45;
+	     background-color: rgba(255,215,0, .4);
+	    }
+	100%{box-shadow: 10px 10px 40px gold;
+	     background-color: rgba(255,215,0, .85);
+	     opacity: 1;
+	    }
+}
+
 img.player-pic{
 	width: 100px;
 	border-radius: 10px;
@@ -76,6 +99,28 @@ img.cards{
 
 /* ------------- end card animation ---------------- */
 
+
+#btnContainer{
+	margin-top: 25px;
+	margin-bottom 25px;
+	text-align: center;
+}
+
+#btnDeal{
+	font-size: 2em;
+	color: gold;
+	text-decoration: none;
+	background-color: rgba(0,128, 0, .75);
+	padding:6px;
+}
+
+#btnDeal:hover{
+	box-shadow: 5px 5px 40px gold;
+}
+
+#btnDeal:active{
+	background-color: rgba(0,128, 0, 1)
+}
 
 footer p{
 	width: 600px;

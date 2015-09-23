@@ -78,9 +78,6 @@
 				?>
 
 			</div>
-			
-			<form><input class="button" type=button value="New Deal" onClick="history.go()"></form> 
-
 		</div>
 		<footer>
 				<figure>

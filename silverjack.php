@@ -69,9 +69,9 @@ function deal($players) {
 		//Set the player information for the return
 		$players[$player] = $playerValues;
 	}
-        //Call findWinners() to set the Win boolean
+	//Call findWinners() to set the Win boolean
 	$players = findWinners($players);
-        //return the $players array to the calling code
+	//return the $players array to the calling code
 	return $players;
 }
 
@@ -106,7 +106,6 @@ function findWinners($players){
 	//Return the array for players with the Win boolean set
 	return $players;
 }
-
 
 //Lets deal a round of cards
 $players = deal($players);

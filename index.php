@@ -45,13 +45,6 @@
 					echo "<h4>{$playersKey}</h4>\n";
 					echo "<span>Hand Total: {$players[$playersKey]['handTotal']} </span>\n <br/> \n";
 					
-					if($players[$playersKey]['handTotal'] > 42){
-						echo "<strong> Lose </strong>";
-						
-					}elseif($players[$playersKey]['handTotal'] == 42 || $players[$playersKey]['handTotal'] < 42){
-						echo "<h2> Winner!</h2>";
-					}
-					
 					/*
 					 * Lets get the image uri here to make the formatting
 					 * of the image tag simpler
